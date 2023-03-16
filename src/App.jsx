@@ -96,10 +96,10 @@ function App() {
 
 
 
-  const handleAddCupom = (item) => {
+  const handleAddCupom = (data) => {
     console.log("disparou addCupom");
     let totalDesconto = getTotal();
-    item.forEach((cart) => {
+    data.forEach((cart) => {
       switch (cart) {
         case "5%":
           var reducedPrice = (totalDesconto * 0.25) / 100;

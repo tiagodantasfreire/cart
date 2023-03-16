@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Summary = ({total, handleAddCupom}) => {
+const Summary = ({cupom, total, handleAddCupom}) => {
   return (
     <>
       <div className='box'>
@@ -16,7 +16,7 @@ const Summary = ({total, handleAddCupom}) => {
             <span>Gratuito</span>
           </div>
           <div>
-            <button onClick={handleAddCupom}>
+            <button onClick={() => {handleAddCupom(cupom)}}>
               Adicionar cupom de desconto
               <i className='bx bx-right-arrow-alt'></i>
             </button>
