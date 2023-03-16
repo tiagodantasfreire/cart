@@ -93,21 +93,23 @@ function App() {
 
   const cartTotal = getTotal();
 
-  const handleAddCupom = (item) => {
-    console.log("disparou addCupom");
+  const handleAddCupom = (cupom) => {
+    console.log('disparou addCupom');
+
     let totalDesconto = getTotal();
-    data.forEach((cart) => {
-      switch (cart) {
-        case '5%':
-          var reducedPrice = (totalDesconto * 0.25) / 100;
-          totalDesconto -= reducedPrice;
-          break;
-        case '10%':
-          var reducedPrice = (totalDesconto * 5) / 100;
-          totalDesconto -= reducedPrice;
-          break;
-      }
-    });
+
+    switch (cupom) {
+      case '5%':
+        var reducedPrice = (totalDesconto * 0.25) / 100;
+        totalDesconto -= reducedPrice;
+        break;
+
+      case '10%':
+        var reducedPrice = (totalDesconto * 5) / 100;
+        totalDesconto -= reducedPrice;
+        break;
+    }
+
     return totalDesconto;
   };
 
